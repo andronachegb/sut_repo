@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TestCaseCatalog version="8.4.0.202012071239">
+    <testCaseCatalog>
+        <item name="test_cases/SUT_Library.fftc">
+            <tcDescriptor version="8.4.0.202012071239">
+                <general>
+                    <isProcedureLibrary>true</isProcedureLibrary>
+                    <language>Python</language>
+                </general>
+                <procedures>
+                    <item name="get_SUT_model_make" isPublic="true"/>
+                </procedures>
+            </tcDescriptor>
+        </item>
+    </testCaseCatalog>
+</TestCaseCatalog>

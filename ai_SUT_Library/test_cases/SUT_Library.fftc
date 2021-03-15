@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<testCase version="8.4.0.202012071239" entryPoint="getSutKpi">
+    <general>
+        <isProcedureLibrary>true</isProcedureLibrary>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="getSutKpi">
+            <steps>
+                <item guid="47267238-9507-489b-85dc-02b8dcd4f000" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>import random</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="4b756969-0d7d-4aca-90e5-06646284310c" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>cpu = random.randint(10, 40)</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="d5f71739-4c01-45df-b900-09d6b22ae43b" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>print(cpu)</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="d94bcf0f-c2e7-4c7d-9612-89b1da65910a" action="json" useFieldsInCommand="false">
+                    <command>
+                        <body>action=&apos;createJson&apos;, documentName=&apos;response&apos;, fromFile=&apos;false&apos;, jsonString=&apos;\\\\[{&quot;memory_utilization&quot;:15,&quot;cpu_utilization&quot;:&quot;[cpu]&quot;,&quot;name&quot;:&quot;SUT1&quot;,&quot;model&quot;:&quot;Landslide&quot;,&quot;make&quot;:&quot;Spirent&quot;}]&apos;</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.execution.builtin.json.JsonPropertiesGroup">
+                        <action inherit="false">createJson</action>
+                        <jsonString inherit="false" sub="true">\\[{&quot;memory_utilization&quot;:15,&quot;cpu_utilization&quot;:&quot;[cpu]&quot;,&quot;name&quot;:&quot;SUT1&quot;,&quot;model&quot;:&quot;Landslide&quot;,&quot;make&quot;:&quot;Spirent&quot;}]</jsonString>
+                        <documentName inherit="false">response</documentName>
+                    </applicationProperties>
+                </item>
+                <item guid="d4dfe9e5-6a0b-48a0-9fe1-e312e080972f" action="return">
+                    <command>
+                        <body>[response]</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+        <item name="get_SUT_model_make" isPublic="true">
+            <steps>
+                <item guid="762d0a94-779f-40ac-aab0-e33637a97450" action="json" useFieldsInCommand="false">
+                    <command>
+                        <body>action=&apos;createJson&apos;, documentName=&apos;response&apos;, fromFile=&apos;false&apos;, jsonString=&apos;{&quot;sut_model&quot;:&quot;TestModel&quot;,&quot;sut_make&quot;:&quot;TestMake&quot;}&apos;</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.execution.builtin.json.JsonPropertiesGroup">
+                        <action inherit="false">createJson</action>
+                        <jsonString inherit="false">{&quot;sut_model&quot;:&quot;TestModel&quot;,&quot;sut_make&quot;:&quot;TestMake&quot;}</jsonString>
+                        <documentName inherit="false">response</documentName>
+                    </applicationProperties>
+                </item>
+                <item guid="70f952fb-0873-4a2e-8dc3-c1e7417030f3" action="return">
+                    <command>
+                        <body>[response]</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>
